@@ -1,0 +1,43 @@
+:root {
+    --color1: white;
+    --color2:  rgb(211, 209, 209);
+    --colorText: rgb(50, 50, 50);
+}
+@font-face {
+    font-family: calibri;
+    src: url(./calibri-regular.ttf);
+}
+html {
+    background-color: var(--color2);
+    font-family: calibri;
+    color: var(--colorText);
+}
+body {
+    margin: 0px;
+}
+html, body {
+    height: 100%;
+}
+html * {
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: var(--color1);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
+    column-gap: 15px;
+}
+.header-text {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.header > svg {
+    width: 40px;
+}
+.header > svg > path {
+    fill: var(--colorText);
+}
