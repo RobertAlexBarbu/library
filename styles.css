@@ -11,6 +11,7 @@ html {
     background-color: var(--color2);
     font-family: calibri;
     color: var(--colorText);
+    font-size: max(10px, 2vh);
 }
 body {
     margin: 0px;
@@ -24,7 +25,7 @@ html * {
 
 .header {
     background-color: var(--color1);
-    height: 10vh;
+    height: max(45px, 10vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +37,7 @@ html * {
     font-weight: bold;
 }
 .header > svg {
-    width: 40px;
+    width: 2.4rem;
 }
 .header > svg > path {
     fill: var(--colorText);
