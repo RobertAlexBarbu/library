@@ -112,3 +112,50 @@ button {
 .pages {
     margin-bottom: 30px;
 }
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5);
+
+    position: fixed;
+    top:0px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: visible;
+}
+form {
+    width: max(25vw, 260px);
+    height: max(60vh, 300px);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
+}
+form > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 15%;
+    gap: 20px;
+
+}
+label {
+    display: inline-block;
+    text-align: left;
+}
+form li.normal {
+    display: flex;
+    flex-direction: column;
+}
+form li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
