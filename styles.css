@@ -74,7 +74,41 @@ button {
 
 .books {
     height: auto;
-    padding-top: max(45px, 10vh);
-    padding-bottom: 15vh;
+    padding-top: calc(max(45px, 10vh) + 20px);
+    padding-bottom: calc(15vh + 20px);
+    padding-left: max(5vw, 10px);
+    padding-right: max(5vw, 10px);
 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--color1);
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
+    padding: 20px;
+    font-size: 1.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.card span, .card .title {
+    font-weight: bold;
+}
+.card button {
+    display: block;
+    width: 70%;
+    height: 13%;
+    font-size: 1.2rem;
+}
+.pages {
+    margin-bottom: 30px;
 }
