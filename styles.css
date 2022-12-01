@@ -80,7 +80,7 @@ button {
     padding-right: max(5vw, 10px);
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, 280px);
     justify-content: center;
     gap: 20px;
 }
@@ -88,7 +88,7 @@ button {
 .card {
     background-color: var(--color1);
     height: 330px;
-    width: 250px;
+    width: 280px;
     border-radius: 10px;
     box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
     padding: 20px;
@@ -139,9 +139,12 @@ button {
 
     visibility: hidden;
 }
+.form-container.active {
+    visibility: visible;
+}
 form {
-    width: max(25vw, 260px);
-    height: max(60vh, 300px);
+    width: clamp(270px, 80%, 450px);/*max(30vw, 250px);*/
+    height: max(60vh, 370px);
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
@@ -153,7 +156,9 @@ form > ul {
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 15%;
+    padding: 10%;
+    padding-left: 25px;
+    padding-right: 25px;
     gap: 20px;
 
 }
@@ -204,11 +209,12 @@ input[type="text"], input[type="number"] {
     border-radius: 5px;
     border: 1px solid gray;
     padding: 6px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 input[type="text"]:focus, input[type="number"]:focus {
     outline: none;
     border: 2px solid green;
+    word-break: break-all;
 }
 
 button[type="submit"] {

@@ -41,7 +41,7 @@
     <div class="add-book">
         <button>Add Book</button>
     </div>
-    <div class="form-container">
+    <div class="form-container active">
         <form>
             <ul>
                 <li id="formTitle">
@@ -49,15 +49,15 @@
                 </li>
                 <li class="normal">
                     <label for="titleInput">Title:</label>
-                    <input type="text" name="title" id="titleInput" required>
+                    <input type="text" name="title" id="titleInput" required maxlength="50">
                 </li>
                 <li class="normal">
                     <label for="authorInput">Author:</label>
-                    <input type="text" name="author" id="authorInput" required>
+                    <input type="text" name="author" id="authorInput" required maxlength="35">
                 </li>
                 <li class="normal">
                     <label for="pagesInput">Nr of Pages:</label>
-                    <input type="number" name="pages" id="pagesInput" required>
+                    <input type="number" name="pages" id="pagesInput" required min="1", max="9999">
                 </li>
                 <li id="readItem">
                     <label for="readInput" id="readLabel">Did you read it?</label>
