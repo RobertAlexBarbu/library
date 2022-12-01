@@ -23,6 +23,13 @@
             <button>STATUS</button>
             <button>REMOVE</button>
         </div>
+        <div class="card">
+            <div class="title">Aventuri din copilaria</div>
+            <div class="author">by <span>Mihaile</span></div>
+            <div class="pages"><span>200</span> pages</div>
+            <button>STATUS</button>
+            <button>REMOVE</button>
+        </div>
         <div class="card"></div>
         <div class="card"></div>
         <div class="card"></div>
@@ -37,23 +44,23 @@
     <div class="form-container">
         <form>
             <ul>
-                <li>
+                <li id="formTitle">
                     Add Book
                 </li>
                 <li class="normal">
                     <label for="titleInput">Title:</label>
-                    <input type="text" name="title" id="titleInput">
+                    <input type="text" name="title" id="titleInput" required>
                 </li>
                 <li class="normal">
                     <label for="authorInput">Author:</label>
-                    <input type="text" name="author" id="authorInput">
+                    <input type="text" name="author" id="authorInput" required>
                 </li>
                 <li class="normal">
-                    <label for="pagesInput">Number of pages:</label>
-                    <input type="number" name="pages" id="pagesInput">
+                    <label for="pagesInput">Nr of Pages:</label>
+                    <input type="number" name="pages" id="pagesInput" required>
                 </li>
-                <li>
-                    <label for="readInput">Did you read it?</label>
+                <li id="readItem">
+                    <label for="readInput" id="readLabel">Did you read it?</label>
                     <input type="checkbox" name="read" value="true" id="readInput">
                 </li>
                 <li><button type="submit">Add</button></li>

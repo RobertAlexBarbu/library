@@ -92,7 +92,7 @@ button {
     border-radius: 10px;
     box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
     padding: 20px;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
 
     display: flex;
     flex-direction: column;
@@ -158,4 +158,52 @@ form li {
     width: 100%;
     display: flex;
     justify-content: center;
+    gap: 2px;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#formTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#readInput {
+    appearance: none;
+    margin: 0px;
+    margin-left: 8px;
+    height: 1.2rem;
+    width: 1.2rem;
+    border: 1px solid rgb(48, 48, 48);
+    border-radius: 4px;
+
+    position: relative;
+}
+#readInput::before {
+    content: url(./check-bold.svg);
+    visibility: hidden;
+}
+#readInput:checked::before {
+    visibility: visible;
+}
+input[type="text"], input[type="number"] {
+    appearance: none;
+    height: 2.4rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 6px;
+    font-size: 1.2rem;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+    outline: none;
+    border: 2px solid green;
+}
+
+button[type="submit"] {
+    appearance: none;
+    padding: 7px;
+    width: 120px;
+    font-size: 1.2rem;
+    border: none;
 }
