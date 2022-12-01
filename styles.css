@@ -87,12 +87,14 @@ button {
 
 .card {
     background-color: var(--color1);
-    height: 300px;
+    height: 330px;
     width: 250px;
     border-radius: 10px;
     box-shadow: 1px 0px 8px 1px rgb(158, 158, 158);
     padding: 20px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    padding-left: 40px;
+    padding-right: 40px;
 
     display: flex;
     flex-direction: column;
@@ -102,6 +104,15 @@ button {
 }
 .card span, .card .title {
     font-weight: bold;
+
+}
+.title, .author, .pages {
+    align-self: start;
+    white-space: initial;
+    word-break:break-all;
+    width: 100%;
+    padding: 3px;
+    border-bottom: 2px solid rgb(164, 164, 164);
 }
 .card button {
     display: block;
@@ -110,7 +121,7 @@ button {
     font-size: 1.2rem;
 }
 .pages {
-    margin-bottom: 30px;
+    margin-bottom: auto;
 }
 
 .form-container {
@@ -126,7 +137,7 @@ button {
     justify-content: center;
     align-items: center;
 
-    visibility: visible;
+    visibility: hidden;
 }
 form {
     width: max(25vw, 260px);
