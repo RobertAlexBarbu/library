@@ -83,6 +83,7 @@ function createCards(library) {
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
+        removeBtn.setAttribute("id", "removeBtn");
         removeBtn.addEventListener("click", removeBook);
         card.appendChild(removeBtn);
 
