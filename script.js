@@ -79,14 +79,6 @@ function createCards(library) {
         statusBtn.setAttribute("id", "status");
         setStatus(element, statusBtn);
         statusBtn.addEventListener("click", changeStatus)
-        /*if(element.read === true) {
-            statusBtn.textContent = "Read";
-            statusBtn.classList.add("read");
-        }
-        else {
-            statusBtn.textContent = "Not Read";
-            statusBtn.classList.remove("read");
-        }*/
         card.appendChild(statusBtn);
 
         const removeBtn = document.createElement("button");
@@ -100,14 +92,16 @@ function createCards(library) {
 }
 function submitBook(event) {
     event.preventDefault();
-    const book = new Book(title.value, author.value, pages.value, read.checked);
-    addBookToLibrary(book);
-    console.log(library);
-    read.checked = false;
-    title.value = "";
-    author.value = "";
-    pages.value = "";
-    closeContainer()
+    if(title.reportValidity() && author.reportValidity() && pages.reportValidity()) {
+        const book = new Book(title.value, author.value, pages.value, read.checked);
+        addBookToLibrary(book);
+        console.log(library);
+        read.checked = false;
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+        closeContainer()
+    }
 }
 
 const formContainer = document.querySelector(".form-container");
@@ -127,6 +121,11 @@ function openContainer() {
 function closeContainer() {
     //if(event.target === formContainer) {
     formContainer.classList.remove("active");
+    title.value="";
+    author.value="";
+    pages.value="";
+    read.checked = false;
+
 }
 addBookBtn.addEventListener("click", openContainer);
 formContainer.addEventListener("click", closeContainer);
