@@ -26,9 +26,33 @@ function removeBook(event) {
 
     const toRemove = library.findIndex((element)=>{
         return element.equals(book);
-    })
+    });
     library.splice(toRemove, 1);
     createCards(library);
+}
+function setStatus(book, statusBtn) {
+    if(book.read === true) {
+        statusBtn.textContent = "Read";
+        statusBtn.classList.add("read");
+    }
+    else {
+        statusBtn.textContent = "Not Read";
+        statusBtn.classList.remove("read");
+    }
+}
+function changeStatus(event) {
+    const parent = event.target.parentElement;
+    const title = parent.querySelector(".title").textContent;
+    const author = parent.querySelector(".author").textContent;
+    const pages = parent.querySelector(".pages").textContent;
+    const book = new Book(title, author, pages);
+
+    const toChange = library.findIndex((element)=>{
+        return element.equals(book);
+    });
+    library[toChange].read = !library[toChange].read;
+    setStatus(library[toChange], event.target);
+
 }
 function createCards(library) {
     books.textContent = "";
@@ -52,14 +76,24 @@ function createCards(library) {
         card.appendChild(pagesArea);
 
         const statusBtn = document.createElement("button");
-        statusBtn.textContent = "Not Read";
+        statusBtn.setAttribute("id", "status");
+        setStatus(element, statusBtn);
+        statusBtn.addEventListener("click", changeStatus)
+        /*if(element.read === true) {
+            statusBtn.textContent = "Read";
+            statusBtn.classList.add("read");
+        }
+        else {
+            statusBtn.textContent = "Not Read";
+            statusBtn.classList.remove("read");
+        }*/
         card.appendChild(statusBtn);
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
         removeBtn.addEventListener("click", removeBook);
         card.appendChild(removeBtn);
-        
+
         books.appendChild(card);
 
     })

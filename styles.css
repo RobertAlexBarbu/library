@@ -224,3 +224,9 @@ button[type="submit"] {
     font-size: 1.2rem;
     border: none;
 }
+#status {
+    background-color: red;
+}
+#status.read {
+    background-color: green;
+}
