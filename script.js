@@ -4,9 +4,30 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+Book.prototype.equals = function(book) {
+    if(this.title === book.title && this.author === book.author && this.pages === book.pages) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 const library = [];
 function addBookToLibrary(book) {
     library.push(book);
+    createCards(library);
+}
+function removeBook(event) {
+    const parent = event.target.parentElement;
+    const title = parent.querySelector(".title").textContent;
+    const author = parent.querySelector(".author").textContent;
+    const pages = parent.querySelector(".pages").textContent;
+    const book = new Book(title, author, pages);
+
+    const toRemove = library.findIndex((element)=>{
+        return element.equals(book);
+    })
+    library.splice(toRemove, 1);
     createCards(library);
 }
 function createCards(library) {
@@ -36,9 +57,9 @@ function createCards(library) {
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
+        removeBtn.addEventListener("click", removeBook);
         card.appendChild(removeBtn);
-
-        console.log(card);
+        
         books.appendChild(card);
 
     })
