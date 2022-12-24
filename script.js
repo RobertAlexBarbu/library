@@ -38,7 +38,7 @@ class Book {
 
 const library = [];
 function addBookToLibrary(book) {
-    library.push(book);
+    library.unshift(book);
     createCards(library);
 }
 function removeBook(event) {
@@ -142,9 +142,11 @@ const read = form.querySelector("#readInput");
 const books = document.querySelector(".books");
 function openContainer() {
     formContainer.classList.add("active");
+    form.classList.add("active");
 }
 function closeContainer() {
     //if(event.target === formContainer) {
+    form.classList.remove("active");
     formContainer.classList.remove("active");
     title.value="";
     author.value="";
