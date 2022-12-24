@@ -1,17 +1,41 @@
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-Book.prototype.equals = function(book) {
-    if(this.title === book.title && this.author === book.author && this.pages === book.pages) {
-        return true;
+
+class Book {
+    #title;
+    get title() {
+        return this.#title;
     }
-    else {
-        return false;
+    #author;
+    get author() {
+        return this.#author;
+    }
+    #pages;
+    get pages() {
+        return this.#pages;
+    }
+    #read = false;
+    get read() {
+        return this.#read;
+    }
+    set read(value) {
+        this.#read = value;
+    }
+    constructor(title, author, pages, read) {
+        this.#title = title;
+        this.#author = author;
+        this.#pages = pages;
+        this.#read = read;
+
+    }
+    equals(book) {
+        if(this.title === book.title && this.author === book.author && this.pages === book.pages) {
+            return true;
+        }
+        else {
+            return false;
+        }     
     }
 }
+
 const library = [];
 function addBookToLibrary(book) {
     library.push(book);
